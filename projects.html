@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects - Kaiwen Li</title>
   <meta name="author" content="Kaiwen Li">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23222'/%3E%3Ctext x='32' y='45' font-family='Helvetica,Arial,sans-serif' font-size='38' text-anchor='middle' fill='%23fff'%3EK%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231b1f27'/%3E%3Ctext x='32' y='45' font-family='Helvetica,Arial,sans-serif' font-size='38' text-anchor='middle' fill='%23eef1f6'%3EK%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,36 +26,41 @@
 
     <h2>Bing Beats <span class="muted">&middot; Apr 2026</span></h2>
     <p>
-      An app for discovering music by place and time. Pick a country and a year from 1950 to today,
-      and it lists the tracks that defined that place and moment, with 30-second previews and links
-      to the full songs on Spotify. A chat assistant explains the local scene and can suggest playlists.
-      It runs on iOS, Android, and the web; a small Express backend keeps API keys off the client and
-      combines Spotify, iTunes, Gemini, and Mapbox.
+      An app for discovering music by place and time. Pick a country on a Mapbox globe and a year on a
+      slider, and it lists the tracks that defined that place and moment, with 30-second previews and links
+      to the full songs on Spotify. A Gemini-powered music guide chats about the local scene and can suggest
+      playlists. The Node.js back end searches Spotify by year and market, caches access tokens, fills in
+      missing previews through iTunes, and keeps API keys off the client. Runs on iOS, Android, and the web.
     </p>
     <p>
-      <b>Built with</b>: TypeScript, Expo / React Native, Node.js, Express<br>
+      <b>Built with</b>: TypeScript, React Native, Expo, Node.js, Express<br>
       <b>Links</b>: <span class="links"><a href="https://github.com/KaiwenLi2007/Bing_Beats">Code</a></span>
     </p>
 
-    <h2>MegaGem Live <span class="muted">&middot; Feb 2026</span></h2>
+    <h2>MegaGem Live <span class="muted">&middot; Feb &ndash; Jul 2026</span></h2>
     <p>
-      A digital version of Jane Street's auction board game <i>MegaGems</i>: one human against two AI bidders.
-      At the start of each round, half the gems are secretly dealt out as private information, and
-      winning an auction forces you to reveal one of them, so every bid is a trade between value and
-      information. A Flask and Socket.IO backend runs the real-time bidding; the game is played in a
-      first-person 3D auction room built with Three.js (with a flat 2D mode), and Gemini powers an
-      in-game coach and a tutorial.
+      A digital version of Jane Street's hidden-information auction game <i>MegaGem</i>, where you play
+      against two AI bidders. At the start of each round, half the gems are secretly dealt out as private
+      information, and winning an auction forces you to reveal one of them, so every bid is a trade between
+      value and information.
     </p>
     <p>
-      <b>Built with</b>: Python, Flask, Socket.IO, JavaScript, Three.js, Gemini API<br>
+      The Flask-SocketIO auction engine handles bidding, private gem reveals, tie-breaks, and settlement;
+      spectators only ever receive a redacted game state, so private gems never leak. The two AI bidders call
+      the Gemini API and return validated, legal bids, with a rule-based fallback if the API call or parsing
+      fails. The game is rendered as a first-person 3D auction room in Three.js, with the live HTML interface
+      embedded through CSS3DRenderer, and includes an AI coach and a tutorial for new players.
+    </p>
+    <p>
+      <b>Built with</b>: Python, Flask-SocketIO, JavaScript, Three.js, Gemini API<br>
       <b>Links</b>: <span class="links"><a href="https://megagem-live.onrender.com">Play</a><a href="https://kaiwenli2007.github.io/MegaGem_Live/">About</a><a href="https://github.com/KaiwenLi2007/MegaGem_Live">Code</a></span>
     </p>
 
     <h2>Global Asset Management Distribution <span class="muted">&middot; Jan &ndash; May 2025</span></h2>
     <p>
-      Independent research on where the world's top asset management companies are located. I
-      aggregated and cross-checked market data to study how being close to a major financial center
-      relates to a firm's long-term success, and published the results as an interactive story map.
+      Independent research on where the world's top asset management companies are located. Aggregated
+      and cross-checked market data to study how being close to a major financial center relates to a
+      firm's long-term success, and published the results as an interactive story map.
     </p>
     <p>
       <b>Built with</b>: ArcGIS StoryMaps<br>
