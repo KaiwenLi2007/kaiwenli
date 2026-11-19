@@ -1,0 +1,136 @@
+/* Plain, tqchen.com-inspired styles. Change the variables below to restyle the whole site. */
+
+:root {
+  --bg: #ffffff;
+  --text: #222222;
+  --muted: #6b6b6b;
+  --link: #0069d6;
+  --rule: #e2e2e2;
+  --bar-bg: #222222;
+  --bar-text: #bfbfbf;
+  --bar-active: #ffffff;
+  --width: 880px;
+  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161616;
+    --text: #dddddd;
+    --muted: #9a9a9a;
+    --link: #6aaaff;
+    --rule: #333333;
+    --bar-bg: #000000;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 var(--font);
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container {
+  max-width: var(--width);
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* ---- Top bar ---- */
+
+.topbar { background: var(--bar-bg); }
+
+.topbar .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.topbar .site-name {
+  color: var(--bar-active);
+  font-size: 1.15rem;
+  margin-right: 12px;
+}
+
+.topbar nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}
+
+.topbar nav a { color: var(--bar-text); }
+
+.topbar a:hover,
+.topbar nav a[aria-current="page"] {
+  color: var(--bar-active);
+  text-decoration: none;
+}
+
+/* ---- Content ---- */
+
+main { padding-top: 28px; padding-bottom: 40px; }
+
+h1 { font-size: 2rem; line-height: 1.2; margin: 0.2em 0 0.5em; }
+h2 { font-size: 1.4rem; line-height: 1.3; margin: 1.8em 0 0.5em; }
+h3 { font-size: 1.1rem; line-height: 1.3; margin: 1.4em 0 0.3em; }
+
+p { margin: 0 0 1em; }
+
+ul { padding-left: 1.4em; margin: 0 0 1em; }
+li { margin: 0.3em 0; }
+
+.muted { color: var(--muted); }
+
+/* Photo + contact block at the top of the home page */
+.profile { display: flow-root; margin-bottom: 1em; }
+
+.profile img {
+  float: left;
+  width: 200px;
+  height: auto;
+  margin: 4px 28px 16px 0;
+}
+
+.plain { list-style: none; padding: 0; }
+
+/* Project entries */
+.links a + a::before {
+  content: "·";
+  color: var(--muted);
+  padding: 0 0.5em;
+  display: inline-block;
+}
+
+/* ---- Footer ---- */
+
+footer {
+  color: var(--muted);
+  font-size: 0.875rem;
+  padding-bottom: 32px;
+}
+
+footer p {
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+}
+
+@media (max-width: 560px) {
+  .profile img {
+    float: none;
+    display: block;
+    width: 160px;
+    margin: 0 0 16px;
+  }
+}
